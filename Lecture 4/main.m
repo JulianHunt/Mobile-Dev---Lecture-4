@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
-int main(int argc, const char * argv[])
+#import "calculator.h"
+int main ( int argc,  char * argv[] )
 {
-
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Calculator *deskCalc  = [[Calculator alloc]  init] ;
+        [deskCalc setAccumulator:  100.0] ;
+        [deskCalc add:  200.0 ] ;
+        [deskCalc divide:  15.0] ;
+        [deskCalc subtract:  10.0] ;
+        [deskCalc multiply:  5] ;
+        NSLog ( @" The  result is %d and should be 50" ,  [[deskCalc accumulator]intValue] ) ;
         
     }
     return 0;
